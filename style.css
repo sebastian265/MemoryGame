@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    
+    display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(2, 1fr);
+column-gap: 5px;
+row-gap: 5px;
+}
+.block {
+    width: 20vh;
+    height: 20vh;
+    position:relative;
+}
+.block > span {
+    content:"" ;
+    display: "block";
+    background: blueviolet;
+    width: 20vh;
+    height: 20vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    overflow: hidden;
+}

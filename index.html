@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+        <div id="container">
+            <div class="block" id="block"><img src="1p.svg" data-num="1" alt=""/><span id="span"></span></div>
+            <div class="block"><img src="2p.svg" data-num="2" alt=""/><span ></span></div>
+            <div class="block"><img src="1p.svg" data-num="1" alt=""/><span></span></div>
+            <div class="block"><img src="3p.svg" data-num="3" alt=""/><span></span></div>
+            <div class="block"><img src="3p.svg" data-num="3" alt=""/><span></span></div>
+            <div class="block"><img src="2p.svg" data-num="2" alt=""/><span></span></div>
+        </div>
+    <script type="text/javascript">
+// const blocks = document.querySelectorAll(".block");
+// for (let i = 0; i<blocks.length; i++){
+//     blocks[i].addEventListener("click", function(){
+//         console.log(i);
+//         blocks[i].
+//     })
+// }
+const block = document.getElementById('block');
+const span = document.getElementById('span');
+block.addEventListener("click", function(){
+span.style.display = "none";
+})
+
+
+
+    </script>
+</body>
+
+</html>
