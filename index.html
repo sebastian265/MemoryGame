@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class="block" data-num="1"><span></span><img src="1p.svg" alt="" /></div>
+        <div class="block" data-num="2"><span></span><img src="2p.svg" alt="" /></div>
+        <div class="block" data-num="1"><span></span><img src="1p.svg" alt="" /></div>
+        <div class="block" data-num="4"><span></span><img src="4p.svg" alt="" /></div>
+        <div class="block" data-num="5"><span></span><img src="5p.svg" alt="" /></div>
+        <div class="block" data-num="5"><span></span><img src="5p.svg" alt="" /></div>
+        <div class="block" data-num="6"><span></span><img src="6p.svg" alt="" /></div>
+        <div class="block" data-num="3"><span></span><img src="3p.svg" alt="" /></div>
+        <div class="block" data-num="4"><span></span><img src="4p.svg" alt="" /></div>
+        <div class="block" data-num="2"><span></span><img src="2p.svg" alt="" /></div>
+        <div class="block" data-num="3"><span></span><img src="3p.svg" alt="" /></div>
+        <div class="block" data-num="6"><span></span><img src="6p.svg" alt="" /></div>
+    </div>
+    <script type="text/javascript">
+        let firstChosenBlock;
+        let secondChosenBlock;
+        let thereIsOneOpenNow = 0;
+        let firstPickedDataset = 0;
+        let secondPickedDataset = 0;
+
+        function compare() {
+            secondPickedDataset = secondChosenBlock.dataset.num;
+            if (firstPickedDataset === secondPickedDataset) {
+                console.log('there is a match');
+                thereIsOneOpenNow--;
+            } else {
+                thereIsOneOpenNow--;
+                console.log('no match');
+                setTimeout(() => {
+                    firstChosenBlock.firstChild.style.display = "block";
+                    secondChosenBlock.firstChild.style.display = "block";
+                }, 700);
+
+            }
+
+        }
+
+        function addToCompare() {
+            if (thereIsOneOpenNow == 0) {
+                firstPickedDataset = firstChosenBlock.dataset.num;
+                thereIsOneOpenNow++;
+                console.log('first pick');
+                console.log(firstPickedDataset);
+            } else {
+                console.log('compare used');
+                compare();
+
+            }
+        }
+
+
+
+        const blocks = document.querySelectorAll(".block");
+        for (let i = 0; i < blocks.length; i++) {
+            blocks[i].addEventListener("click", function () {
+                console.log(i);
+                blocks[i].firstChild.style.display = "none";
+                if (thereIsOneOpenNow == 0) {
+                    firstChosenBlock = blocks[i];
+                } else {
+                    secondChosenBlock = blocks[i];
+                }
+                addToCompare();
+            })
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
