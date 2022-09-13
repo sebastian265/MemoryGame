@@ -60,7 +60,6 @@
                 firstPickedDataset = firstChosenBlock.dataset.num;
                 thereIsOneOpenNow++;
                 console.log('first pick');
-                console.log(firstPickedDataset);
             } else {
                 console.log('compare used');
                 compare();
@@ -79,9 +78,9 @@
                     return;
                 }
                 if (dontpicknow == true) {
+                    console.log('too fast');
                     return;
                 }
-                console.log(i);
                 blocks[i].firstChild.style.display = "none";
                 if (thereIsOneOpenNow == 0) {
                     firstChosenBlock = blocks[i];
