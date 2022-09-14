@@ -24,79 +24,8 @@
         <div class="block" data-num="3" data-open="closed"><span></span><img src="3p.svg" alt="" /></div>
         <div class="block" data-num="6" data-open="closed"><span></span><img src="6p.svg" alt="" /></div>
     </div>
-    <script type="text/javascript">
-        let firstChosenBlock;
-        let secondChosenBlock;
-        let thereIsOneOpenNow = 0;
-        let firstPickedDataset = 0;
-        let secondPickedDataset = 0;
-        let dontpicknow = false;
-
-        function compare() {
-            dontpicknow = true;
-            secondPickedDataset = secondChosenBlock.dataset.num;
-            if (firstPickedDataset === secondPickedDataset) {
-                console.log('there is a match');
-                thereIsOneOpenNow--;
-                dontpicknow = false;
-            } else {
-                thereIsOneOpenNow--;
-                console.log('no match');
-                setTimeout(() => {
-                    firstChosenBlock.firstChild.style.display = "block";
-                    secondChosenBlock.firstChild.style.display = "block";
-                    firstChosenBlock.dataset.open = "closed";
-                    secondChosenBlock.dataset.open = "closed";
-                    dontpicknow = false;
-                }, 700);
-                
-
-            }
-
-        }
-
-        function addToCompare() {
-            if (thereIsOneOpenNow == 0) {
-                firstPickedDataset = firstChosenBlock.dataset.num;
-                thereIsOneOpenNow++;
-                console.log('first pick');
-            } else {
-                console.log('compare used');
-                compare();
-
-            }
-        }
-
-
-
-        const blocks = document.querySelectorAll(".block");
-        for (let i = 0; i < blocks.length; i++) {
-            blocks[i].addEventListener("click", function () {
-                
-                if (blocks[i].dataset.open === "open") {
-                    console.log("this was already open ");
-                    return;
-                }
-                if (dontpicknow == true) {
-                    console.log('too fast');
-                    return;
-                }
-                blocks[i].firstChild.style.display = "none";
-                if (thereIsOneOpenNow == 0) {
-                    firstChosenBlock = blocks[i];
-                    firstChosenBlock.dataset.open = "open";
-                } else {
-                    secondChosenBlock = blocks[i];
-                    secondChosenBlock.dataset.open = "open";
-                }
-                addToCompare();
-            })
-        }
-
-
-
-
-
+    <button id="btn"><h2>Shuffle</h2></button>
+    <script type="text/javascript" src="script.js">
     </script>
 </body>
 
