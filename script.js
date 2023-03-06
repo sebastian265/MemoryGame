@@ -24,7 +24,7 @@ for (let i = 0; i < blocks.length; i++) {
             console.log('too fast');
             return;
         }
-        blocks[i].firstChild.style.transform = "translateY(15vw)";
+        blocks[i].firstChild.style.transform = "translateY(12vw)";
         if (thereIsOneOpenNow == 0) {
             firstChosenBlock = blocks[i];
             firstChosenBlock.dataset.open = "open";
