@@ -24,10 +24,11 @@ padding: 1vh;
 border-radius: 2vh;
 transition-duration: 2s;
 
+
 }
 .block {
-    width: 20vh;
-    height: 20vh;
+    width: 15vw;
+    height: 15vw;
     position:relative;
     overflow: hidden;
     border-radius: 2vh;
@@ -43,8 +44,8 @@ transition-duration: 2s;
     content:"" ;
     display: "block";
     background: blueviolet;
-    width: 20vh;
-    height: 20vh;
+    width: 60vw;
+    height: 60vw;
     top: 0;
     left: 0;
     position: absolute;

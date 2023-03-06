@@ -24,7 +24,7 @@ for (let i = 0; i < blocks.length; i++) {
             console.log('too fast');
             return;
         }
-        blocks[i].firstChild.style.transform = "translateY(22vh)";
+        blocks[i].firstChild.style.transform = "translateY(15vw)";
         if (thereIsOneOpenNow == 0) {
             firstChosenBlock = blocks[i];
             firstChosenBlock.dataset.open = "open";
@@ -72,20 +72,31 @@ function compare() {
     }
 
 }
-
-function mixPositions() {
-    dontpicknow = false;
-    thereIsOneOpenNow=0;
-
+function mixing () {
     for (let i = 0; i < blocks.length; i++) {
-        blocks[i].firstChild.style.transform = "translateY(0vh)";
-        blocks[i].dataset.open = "closed";
         let position = Math.floor(Math.random() * 10);
         blocks[i].style.order = position;
-    };
+    }
+    dontpicknow = false;
+};
+
+
+
+function mixPositions() {
+    dontpicknow = true;
+    thereIsOneOpenNow=0;
     container.style= 'transform: rotateY('+ rot +'deg)';
     rot +=360;
     console.log('shuffle');
+    for (let i = 0; i < blocks.length; i++) {
+        blocks[i].firstChild.style.transform = "translateY(0vh)";
+        blocks[i].dataset.open = "closed";
+
+    }
+    setTimeout(mixing, 2000);
 };
+
+
+
 const shuffleButton = document.getElementById("btn");
 shuffleButton.addEventListener("click", mixPositions);
